@@ -23,7 +23,7 @@ export const reminders = pgTable("reminders", {
   due_at: date("due_at").notNull(),
   finished: boolean("finished").notNull().default(false),
   userId: integer("user_id").references(() => users.id),
-  priorityId: integer("priority_id").references(() => priorities.id),
+  priorityId: integer("priority_id"),
 });
 
 export const priorities = pgTable("priorities", {
